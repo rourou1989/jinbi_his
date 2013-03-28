@@ -4,12 +4,19 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-	<package name="struts2" extends="struts-default">
+	<package name="user" extends="struts-default">
 		<action name="test" class="com.his.action.TestAction">
 			<result name="success">/test.jsp</result>
 			<result name="input">/login.jsp</result>
 		</action>
+		
+		<action name="login" class="com.his.action.LoginAction">  
+	        <result name="success">/result.jsp</result>  
+	        <result name="input">/login.jsp</result>  
+	    </action>
 	</package>
+	
+	
 	
 	<!-- <package name="users" namespace="/users" extends="struts-default">
 		<action name="*_*_*" class="com.jinbi.action.{1}Action" method="{2}">
@@ -19,9 +26,5 @@
 
 
 	<!-- struts and spring -->
-	<!-- <constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory" />  -->
-	
-	<!-- <constant name="struts.objectFactory"
-		value="org.apache.struts2.spring.StrutsSpringObjectFactory" /> -->
+	<constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
 </struts>
-  
