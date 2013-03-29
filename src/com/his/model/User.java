@@ -1,5 +1,10 @@
 package com.his.model;
 
+/**
+ * 用户User类
+ * @author wikimo
+ *
+ */
 public class User {
 	private int id;
 	private String username;

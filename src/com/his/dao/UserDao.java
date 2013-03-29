@@ -4,6 +4,11 @@ import java.util.List;
 
 import com.his.model.User;
 
+/**
+ * 定义了User数据操作接口
+ * @author wikimo
+ *
+ */
 public interface UserDao {
 	public int create(User user);
 	

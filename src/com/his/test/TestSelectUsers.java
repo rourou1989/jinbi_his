@@ -15,7 +15,8 @@ public class TestSelectUsers {
 	public void test() {
 		ApplicationContext ctx=new ClassPathXmlApplicationContext("applicationContext.xml");
 		UserDao userDao = (UserDao)ctx.getBean("userDao");
-
+		
+		//通过条件条件查询 id > 4的记录
 		List<User> users= userDao.findByCondition("id > 4");
 //		System.out.print("size -- " +users.size());
 		for(User u : users){

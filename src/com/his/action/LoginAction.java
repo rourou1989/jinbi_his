@@ -3,6 +3,11 @@ package com.his.action;
 import com.his.service.LoginService;
 import com.opensymphony.xwork2.ActionSupport;
 
+/**
+ * 用户登陆Action
+ * @author wikimo
+ *
+ */
 public class LoginAction extends ActionSupport{
 	
 	private LoginService loginService;  

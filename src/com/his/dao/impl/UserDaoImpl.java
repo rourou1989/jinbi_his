@@ -13,14 +13,26 @@ import org.springframework.jdbc.core.RowMapper;
 import com.his.dao.UserDao;
 import com.his.model.User;
 
+/**
+ * 用户UserDao接口实现
+ * @author wikimo
+ *
+ */
 public class UserDaoImpl implements UserDao{
 	
 	JdbcTemplate jdbcTemplate;
 	
+	/**
+	 * 通过spring注入jdbcTemplate
+	 * @param jdbcTemplate
+	 */
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate){
 		this.jdbcTemplate =  jdbcTemplate;
 	}
 	
+	/**
+	 * 创建用户
+	 */
 	public int create(User user) {
 		int result = 0;
 		String sql = "insert into users(username,password)values(?,?)";
@@ -28,7 +40,10 @@ public class UserDaoImpl implements UserDao{
 
 		return result;
 	}
-
+	
+	/**
+	 * 更新用户
+	 */
 	public int update(User user) {
 		int result = 0;
 		String sql = "update users set username=?,password=? where id=?";
@@ -37,6 +52,9 @@ public class UserDaoImpl implements UserDao{
 		return result;
 	}
 
+	/**
+	 * 删除用户
+	 */
 	public int delete(int id) {
 		int result = 0;
 		String sql = "delete from users  where id=?";
@@ -45,6 +63,9 @@ public class UserDaoImpl implements UserDao{
 		return result;
 	}
 
+	/**
+	 * 根据id查找一个用户
+	 */
 	public User findById(int id) {
 		String sql = "select * from users where id = ?";
 		User user = null;
@@ -59,6 +80,9 @@ public class UserDaoImpl implements UserDao{
 		return user;
 	}
 
+	/**
+	 * 根据条件查询用户列表
+	 */
 	public List<User> findByCondition(String condition) {
 		//Todo sql注入
 		String sql = "select * from users where " + condition;
@@ -73,9 +97,5 @@ public class UserDaoImpl implements UserDao{
 		}
 		return userList;
 	}
-	
-	
-	
-
 
 }
